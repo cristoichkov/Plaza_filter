@@ -1,7 +1,7 @@
 ## this function filters genes that are not present in the selected species (delete zeros)##
 
 ## Defines the name of the function, which accepts as parameters: 
-## file = "../data.txt", species = c("ath", "ach", "dca", "ccan")
+## file = "../data/data.txt", species = c("ath", "ach", "dca", "ccan")
 
 filter_genes <- function(file, species){
   
