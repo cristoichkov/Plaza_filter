@@ -34,17 +34,15 @@ Figure 1.- Workflow to process GBS dataset
 
 #### Directories:
 ###### bin
-Contains:
+Contains
   * R function `.R`
-    * `ipyrad_extract_table.R`.- extracts the tables of stats.txt file of ipyrad output folder.
+    * `filter_genes.R`.- this function filters genes that are not present in the selected species (delete zeros).
 
 ###### data
 
-Contains the data demultiplex with GBSX:
- * the data are available in [OSF](https://osf.io).
+Contains the table downloaded from PLAZA:
+ * data.txt
 
 
 ###### out
-Contains the results of all analysis:
-  * ###### demultiplex_stats
-     + contains the results of demultiplex with GBSX, ipyrad and stacks. The reads number correctly assigned according to its barcode.
+Contains the results of all analysis
