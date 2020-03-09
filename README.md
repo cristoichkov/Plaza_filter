@@ -26,6 +26,53 @@ Figure 1.- Workflow to process GBS dataset
 Figure 1.- Workflow to process GBS dataset
 </p>
 
+
+```
+source("filter_genes.R")
+
+plaza_df <- read.delim("../data/plaza/data.txt")
+
+colnames(plaza_df)
+
+[1] "X.gf_id"                    "X.species"                  "X.genes"                    "Actinidia.chinensis"       
+[5] "Amaranthus.hypochondriacus" "Arabidopsis.thaliana"       "Beta.vulgaris"              "Chenopodium.quinoa"        
+[9] "Daucus.carota"   
+
+filter_genes("../data/plaza/data.txt", species = c("Arabidopsis.thaliana", "Daucus.carota", "Actinidia.chinensis"))
+```
+
+<p align="center">
+<img src="Plaza_4.png">
+</p>
+<p align="center">
+Figure 1.- Workflow to process GBS dataset
+</p>
+
+
+<p align="center">
+<img src="Plaza_5.png">
+</p>
+<p align="center">
+Figure 1.- Workflow to process GBS dataset
+</p>
+
+<p align="center">
+<img src="Plaza_6.png">
+</p>
+<p align="center">
+Figure 1.- Example "/data/plaza/HOM04D003678_ali.fas"
+</p>
+
+
+<p align="center">
+<img src="Plaza_7.png">
+</p>
+<p align="center">
+Figure 1.- Example "/data/plaza/HOM04D003678_ali.fas"
+</p>
+
+
+
 ## Download genomes
 
 *Carnegiea gigantea*
@@ -62,6 +109,11 @@ File with match sequences
 awk '{print $2}' out/C_gigantea_minado_full.txt | uniq > out/seq_match.txt
 ```
 
+extract target sequences from the genome
+
+```
+xargs samtools faidx data/genomes/C_gigantea.fsa_nt < out/seq_match.txt >> out/C_gigantea.fas
+```
 #### Prerequisites
 
 ##### Software:
@@ -77,7 +129,7 @@ Contains
 ###### data
 
 Contains the table downloaded from PLAZA:
- * data.txt
+ * `data.txt`
 
 
 ###### out
